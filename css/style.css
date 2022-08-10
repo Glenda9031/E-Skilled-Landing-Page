@@ -1,291 +1,322 @@
+@import url(//fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap);
 /* ======== Global Styles ========= */
-
+2
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  /* added */
+  margin: 0;
+}
+
+/* Added  */
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
 }
 
 body {
-    font-size: 16px;
-    margin-left: 100px;
+  font-size: 16px;
+  /*margin-left: 100px;
     margin-right: 100px;
     margin-top: .5rem;
-    width: 900px;
-    font-family: 'Roberto', sans-serif;
-    background-color: #e6f2ff;
-    line-height: 1.2;
+    width: 900px; */
+  font-family: Roboto, sans-serif;
+  background-color: #e6f2ff;
+  line-height: 1.2;
+  position: relative;
+  background-image: linear-gradient(to bottom, hsl(0, 0%, 100%), #e6f2ff);
+}
+
+/* debugging  */
+
+/* * {
+  outline: 1px solid pink;
+} */
+
+.container {
+  width: min(80%, 50rem);
+  margin: 0 auto;
 }
 
 /* ======== Typography ========= */
 
-.container-header {
-    display: flex;
-    gap: 600px;
-    width: 100%;
-    margin-bottom: 4rem;
+.header {
+  padding: 1rem 0;
 }
 
-h1, h2, h3, h4 {
-    font-weight: 700;
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
 }
 
 h1 {
-    color: #1D215E;
-    font-size: 2rem;
+  color: #1d215e;
+  font-size: 2.5rem;
 }
 
 h2 {
-    color: #fff;
+  color: #fff;
 }
 
 p {
-    font-size: .73rem;
-    color: #0023F5;
-    opacity: 3;
+  font-size: 0.73rem;
+  color: #0023f5;
+  opacity: 3;
 }
 
 .courses-paragraph {
-    opacity: 5;
+  opacity: 5;
 }
 
 .courses-subheadings {
-    color: #1D215E;
+  color: #1d215e;
 }
 
 a {
-    color: #cc6699;
-    text-decoration: none;
+  color: #cc6699;
+  text-decoration: none;
 }
 
 /* ======== Logos ========= */
 
 .logo-header {
-    width: 60px;
-    height: 15px;
-    justify-self: flex-start;
-    align-self: center;
+  height: 15px;
 }
 
 .logo-footer {
-    padding-left: 20px;
-    justify-self: flex-start;
-    align-self: center;
-    width: 75px;
-    height: 15px;
-    color: #fff;
+  height: 15px;
+  color: #fff;
+}
+
+.logo-header,
+.logo-footer {
+  object-fit: contain;
 }
 
 /* ======== Buttons ========= */
 
 .btn {
-    cursor: pointer;
+  cursor: pointer;
+  border-radius: 27px;
+  font-size: 0.7rem;
+  padding: 8px 20px;
 }
 
 .header-btn {
-    background-color: #1D215E;
-    justify-self: flex-end;
+  background-color: #1d215e;
 }
 
 .header-btn:hover {
-    position: relative;
-    top: -4;
-    text-decoration: underline;
-    background-color: #E65A69;
+  text-decoration: underline;
+  background-color: #e65a69;
 }
 
 .promo-btn {
-    background-image: linear-gradient(#FF5F08, #E65A69);
+  background-image: linear-gradient(#ff5f08, #e65a69);
 }
 
 .promo-btn:hover {
-    position: relative;
-    top: -4;
-    text-decoration: underline;
-    background-color: #1D215E;
-}
-
-a.btn {
-    color: #fff;
-    margin-right: 100px;
-    margin-left: 0;
-    text-decoration: none;
-    border-radius: 27px;
-    font-size: .70rem;
-    padding: 8px 20px;
-}
-
-.courses-link:hover {
-    text-decoration: underline;
-    background-color: #1D215E;
+  text-decoration: underline;
+  background-color: #1d215e;
 }
 
 .footer-btn {
-    background-color: #AC28B8;
-    justify-self: flex-end;
-
+  background-color: #ac28b8;
 }
 
 .footer-btn:hover {
-    position: relative;
-    top: -4;
-    text-decoration: underline;
-    background-color: #E65A69;
+  text-decoration: underline;
+  background-color: #e65a69;
+}
+
+a.btn {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.courses-link:hover {
+  text-decoration: underline;
+  background-color: #1d215e;
 }
 
 /* ======== Layout ========= */
 
-.container-promo {
-    display: grid;
-    grid-template-columns: 280px 280px;
-    grid-template-areas:
-        "h1 ."
-        "p ."
-        "promo-btn .";    
+.promo .container {
+  display: flex;
+  flex-direction: column;
 }
 
-h1 {
-    grid-area: h1;
-    margin-bottom: 1rem;
+.promo-text {
+  order: 2;
+  /*   width: min(45%, 20rem); */
+  padding: 6rem 0;
 }
 
-p {
-    grid-area: p;
-    margin: 0;
+.promo-text > * + * {
+  margin-top: 1rem;
 }
 
 .promo-btn {
-    grid-area: promo-btn;
-    grid-column-start: auto;
-    justify-self: left;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
+  grid-area: promo-btn;
 }
 
-main {
-    display: grid;
-    width: 100%;
-    column-gap: 2.5rem;
-    row-gap: 2.2rem;
-    grid-template-columns: 230px 230px 230px;
-    grid-template-rows: 200px 200px;
-    justify-content: start;
-    margin: 20px ;
-    grid-template-areas: 
-        "courses-large-orange-box . svg-img-animation                . svg-img-design"
-        "........................ . svg-img-photography              . svg-img-crypto              . svg-img-business"
-        "........................ . courses-sub-headings-animation   . courses-sub-headings-design"
-        "........................ . courses-sub-headings-photography . courses-sub-headings-crypto . courses-sub-headings-business"
-        "........................ . courses-paragraph-animation      . courses-paragraph-design"
-        "........................ . courses-paragraph-photography    . courses-paragraph-crypto    . courses-paragraph-business"
-        "........................ . courses-link-animation           . courses-link-design"
-        "........................ . courses-link-photography         . courses-link-crypto         . courses-link-business";
+.promo-image {
+  outline: 1px solid pink;
+  order: 1;
+  width: 25rem;
+  z-index: -1;
 }
 
-.courses-large-orange-box {
-    grid-area: courses-large-orange-box;
-    background-image: linear-gradient(#FF5F08, #E65A69);
-    color: #fff;
-    border-radius: 15px;
-    align-self: center;
-    padding: 60px 50px 80px 20px;
-    margin-bottom: 50px;
+.courses .container {
+  padding: 2rem 0;
+  display: grid;
+  column-gap: 2rem;
+  row-gap: 2rem;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "intro-text"
+    "animation"
+    "design"
+    "photography"
+    "crypto"
+    "business";
 }
 
-.courses {
-    border: 1px solid #fff;
-    background-color: #fff;
-    border-radius: 15px;
-    padding-right: 30px;
-    padding-left: 10px;
-    padding-bottom: 20px;
+.courses .intro-text {
+  grid-area: intro-text;
+  background-image: linear-gradient(#ff5f08, #e65a69);
+  color: #fff;
+  border-radius: 15px;
+  padding: 3rem 1.5rem;
 }
 
-.courses-link {
+.course {
+  border: 1px solid #fff;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 2rem 1rem 1rem;
+  padding-bottom: 20px;
+}
+
+.course > * + * {
+  margin-top: 1rem;
+}
+
+/* .courses-link {
     align-items: end;
+} */
+
+.courses .design {
+  grid-area: design;
 }
 
-.svg-img-design {
-    grid-area: svg-img-design;
+.courses .photography {
+  grid-area: photography;
 }
 
-.svg-img-photography {
-    grid-area: svg-img-photography;
+.courses .crypto {
+  grid-area: crypto;
 }
 
-.svg-img-crypto {
-    grid-area: svg-img-crypto;
+.courses .business {
+  grid-area: business;
 }
 
-.svg-img-business {
-    grid-area: svg-img-business;
+.courses .animation {
+  grid-area: animation;
 }
 
-.courses-sub-headings-animation {
-    grid-area: courses-sub-headings-animation;
+.footer {
+  background-color: #000033;
+  padding: 1.5rem 0;
 }
 
-.courses-sub-headings-design {
-    grid-area: courses-sub-headings-design;
+.footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.courses-sub-headings-photography {
-    grid-area: courses-sub-headings-photography;
+@media (min-width: 640px) {
+  .header .container {
+    margin-bottom: 2rem;
+  }
+  .promo {
+    position: relative;
+  }
+  .promo .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .promo-text {
+    order: 1;
+    width: min(50%, 20rem);
+    padding: 0 0 2rem;
+  }
+
+  .promo-image {
+    order: 2;
+    flex: 1;
+  }
+
+  .promo-image picture {
+    position: absolute;
+    width: 28rem;
+    right: -10rem;
+    top: -8rem;
+    z-index: -1;
+  }
+  
+  .courses .container {
+    column-gap: 1rem;
+    row-gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "intro-text animation"
+      "design photography"
+      "crypto business";
+  }
 }
 
-.courses-sub-headings-crypto {
-    grid-area: courses-sub-headings-crypto;
-}
-
-.courses-paragraph-animation {
-    grid-area: courses-paragraph-animation;
-    font-size: .72rem;
-}
-
-.svg-img-animation {
-    grid-area: svg-img-animation;
-}
-
-.courses-paragraph-design {
-    grid-area: courses-paragraph-design;
-}
-
-.courses-paragraph-photography {
-    grid-area: courses-paragraph-photography;
-}
-
-.courses-paragraph-crypto {
-    grid-area: courses-paragraph-crypto;
-}
-
-.courses-paragraph-business {
-    grid-area: courses-paragraph-business;
-}
-
-.courses-link-animation {
-    grid-area: courses-link-animation;
-}
-
-.courses-link-design {
-    grid-area: courses-link-design;
-}
-
-.courses-link-photography {
-    grid-area: courses-link-photography;
-}
-
-.courses-link-crypto {
-    grid-area: courses-link-crypto;
-}
-
-.courses-link-business {
-    grid-area: courses-link-business;
-}
-
-.container-footer {
-    background-color: #000033;
-    display: flex;
-    gap: 600px;
-    flex: 1 1 300px;
-    align-content: center;
-    padding: 20px 10px 20px 10px;
-}
-
+@media (min-width: 800px) {
+  .promo {
+    padding: 5rem 0;
+  }
+  .promo-image {
+/*     width: min(100%, 40rem); */
+    z-index: -1;
+  }
+  .promo-image picture {
+    position: absolute;
+    width: min(70%, 42rem);
+    right: -10rem;
+    top: -12rem;
+  }
+  .courses .container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "intro-text animation design"
+      "photography crypto business";
+  }
